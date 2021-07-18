@@ -1,25 +1,76 @@
 import Vue from "vue";
-import VueRouter, { RouteConfig } from "vue-router";
-import Home from "../views/Home.vue";
+import VueRouter from "vue-router";
+import Layout from "@/layout/index.vue";
 
-Vue.use(VueRouter);
-
-const routes: Array<RouteConfig> = [
+const routes = [
   {
     path: "/",
-    name: "Home",
-    component: Home,
+    component: Layout,
+    children: [
+      {
+        name: 'main',
+        path: '',
+        component: () => import("../views/Home.vue")
+      }
+    ]
   },
   {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+    path: "/Brand",
+    component: Layout,
+    children: [
+      {
+        name: 'brand',
+        path: '',
+        component: () => import("../views/Brand.vue")
+      }
+    ]
+  },
+  {
+    path: "/Curriculum",
+    component: Layout,
+    children: [
+      {
+        name: 'curriculum',
+        path: '',
+        component: () => import("../views/Curriculum.vue")
+      }
+    ]
+  },
+  {
+    path: "/AdmissionGuid",
+    component: Layout,
+    children: [
+      {
+        name: 'admissionguid',
+        path: '',
+        component: () => import("../views/AdmissionGuid.vue")
+      }
+    ]
+  },
+  {
+    path: "/ChungdamNews",
+    component: Layout,
+    children: [
+      {
+        name: 'chungdamnews',
+        path: '',
+        component: () => import("../views/ChungdamNews.vue")
+      }
+    ]
+  },
+  {
+    path: "/ChungdamStory",
+    component: Layout,
+    children: [
+      {
+        name: 'chungdamstory',
+        path: '',
+        component: () => import("../views/ChungdamStory.vue")
+      }
+    ]
   },
 ];
+Vue.use(VueRouter);
 
 const router = new VueRouter({
   mode: "history",
