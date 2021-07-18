@@ -24,15 +24,31 @@
       <router-link to="/">
         <Chungdam/>
       </router-link>
-      <div class="menu-container">
-        <div class="menu-box grey-border">
-          <router-link to="/Brand">브랜드소개</router-link>
+      <div class="right-menu">
+        <div class="menu-container">
+          <div
+            class="menu-box grey-border"
+            v-on:mouseover="onHover('브랜드소개')"
+            v-on:mouseout="onOut"
+          >
+            <router-link to="/Brand">브랜드소개</router-link>
+          </div>
+          <div
+            class="menu-box grey-border"
+            v-on:mouseover="onHover('입학안내')"
+            v-on:mouseout="onOut"
+          >
+            <router-link to="/AdmissionGuid">입학안내</router-link>
+          </div>
+          <div
+            class="menu-box grey-border"
+            v-on:mouseover="onHover('채널청담')"
+            v-on:mouseout="onOut"
+          >
+            <router-link to="/ChungdamNews">채널청담</router-link>
+          </div>
         </div>
-        <div class="menu-box grey-border">
-          <router-link to="/AdmissionGuid">입학안내</router-link>
-        </div>
-        <div class="menu-box grey-border">
-          <router-link to="/ChungdamNews">채널청담</router-link>
+        <div class="menu-container">
         </div>
       </div>
     </section>
@@ -49,8 +65,11 @@ export default Vue.extend({
     Chungdam,
   },
   methods:{
-    onHover: function(key : string){
-      this.$emit(key)
+    onHover: function(curHover : string){
+      this.$emit("hover", curHover)
+    },
+    onOut: function(){
+      this.$emit("out")
     }
   }
 })
@@ -59,12 +78,17 @@ export default Vue.extend({
 <style scoped lang="scss">
 
 .header{
+  position: fixed;
+  top: 0;
   font-size:10px;
+  height: 107px;
+  width: 100%;
+  background-color: #ffffff;
 }
 
 .menu-container{
-      display: flex;
-      justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .menu-box{
@@ -89,18 +113,12 @@ export default Vue.extend({
   justify-content: space-between;
   flex-direction: row-reverse;
   min-width: 40em;
-  .pay-container{
-
-  }
-  .user-container{
-
-  }
 }
   
 .nav-small {
   display: flex;
   justify-content: space-between;
-  padding: 0 4em 1em 1em;
+  padding: 1em 4em 1em 1em;
   border-style: solid;
   border-width: 0 0 1px 0;
   min-width: 60em;

@@ -1,7 +1,31 @@
+body {
+  padding-top: 100px;
+  margin-left: 0;
+  margin-right: 0;
+}
 .btn-tlns{
     background-color: transparent;
     border-style: none;
     &:hover{
         cursor: pointer;
+    }
+}
+
+.default-page-layout{
+    width:100%; overflow:hidden; text-align:center;
+    .title{
+        font-size: 35px;
+        position:relative;
+        &:before {
+            content: '> ';
+            color:#47a864;
+        }
+    }
+
+    .top-banner{
+        width:100%; overflow:hidden; text-align:center;
+        img{
+            position:absolute; left:50%; -webkit-transform:translateX(-50%); transform:translateX(-50%); 
+        }
     }
 }

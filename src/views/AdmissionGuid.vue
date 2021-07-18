@@ -1,6 +1,9 @@
 <template>
-  <div class="home">
-    GUID
+  <div class="default-page-layout">
+    <div>
+      <img src="@/assets/images/admissionguid.jpg"/>
+    </div>
+    <div class="title">Guid Page</div>
   </div>
 </template>
 
@@ -8,8 +11,8 @@
 import Vue from "vue";
 
 export default Vue.extend({
-  name: "Home",
-  components: {
-  },
+  name: "AdmissionGuid"
 });
 </script>
+<style scoped lang="scss">
+</style>

@@ -1,6 +1,9 @@
 <template>
-  <div class="home">
-    News
+  <div class="default-page-layout">
+      <div>
+        <img src="@/assets/images/chungdamnews.jpg"/>
+      </div>
+    <div class="title">News Page</div>
   </div>
 </template>
 
@@ -8,7 +11,8 @@
 import Vue from "vue";
 
 export default Vue.extend({
-  name: "Home",
-  components: {},
+  name: "ChungdamNews"
 });
 </script>
+<style scoped lang="scss">
+</style>

@@ -1,6 +1,9 @@
 <template>
-  <div class="home">
-    Brand Page
+  <div class="default-page-layout">
+    <div>
+      <img src="@/assets/images/brandpage.jpg"/>
+    </div>
+    <div class="title">Brand Page</div>
   </div>
 </template>
 
@@ -8,8 +11,8 @@
 import Vue from "vue";
 
 export default Vue.extend({
-  name: "Home",
-  components: {
-  },
+  name: "Brand"
 });
 </script>
+<style scoped lang="scss">
+</style>
