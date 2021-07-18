@@ -48,30 +48,9 @@ export default Vue.extend({
   components: {
     Chungdam,
   },
-  data: function (){
-    return {
-      menu: [
-        {
-          depth1 : "브랜드소개",
-          depth2 : [
-            "브랜드",
-            "커리큘럼"
-          ]
-        },
-                {
-          depth1 : "입학안내",
-          depth2 : [
-            "입학안내",
-          ]
-        },
-        {
-          depth1 : "입학안내",
-          depth2 : [
-            "청담소식",
-            "청담스토리"
-          ]
-        },
-      ]
+  methods:{
+    onHover: function(key : string){
+      this.$emit(key)
     }
   }
 })
@@ -124,6 +103,7 @@ export default Vue.extend({
   padding: 0 4em 1em 1em;
   border-style: solid;
   border-width: 0 0 1px 0;
+  min-width: 60em;
 
   a {
     color: #2c3e50;
@@ -166,10 +146,13 @@ export default Vue.extend({
 }
 
 @media print, all and (max-width:1230px) {
-
-
   .pay-container{
     display: none;
+  }
+  .right-menu{
+    width: 15em;
+    min-width: 15em;
+    max-width: 15em;
   }
 }
 @media print, all and (max-width:768px) {

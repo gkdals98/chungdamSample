@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <Header/>
+    <Header v-on:hover="hoverEvent" v-bind:menus="menu"/>
     <FloatMenu/>
     <router-view></router-view>
   </div>
@@ -16,6 +16,32 @@ export default Vue.extend({
   components: {
     Header,
     FloatMenu
+  },
+  data: function (){
+    return {
+      menu: [
+        {
+          depth1 : "브랜드소개",
+          depth2 : [
+            "브랜드",
+            "커리큘럼"
+          ]
+        },
+                {
+          depth1 : "입학안내",
+          depth2 : [
+            "입학안내",
+          ]
+        },
+        {
+          depth1 : "입학안내",
+          depth2 : [
+            "청담소식",
+            "청담스토리"
+          ]
+        },
+      ]
+    }
   }
 })
 </script>
